@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="004" author="vadim">
+        <!-- Индексы для документов -->
+        <createIndex tableName="documents" indexName="idx_documents_status">
+            <column name="document_status"/>
+        </createIndex>
+
+        <createIndex tableName="documents" indexName="idx_documents_author">
+            <column name="author"/>
+        </createIndex>
+
+        <createIndex tableName="documents" indexName="idx_documents_created_at">
+            <column name="created_at"/>
+        </createIndex>
+
+        <createIndex tableName="documents" indexName="idx_documents_updated_at">
+            <column name="updated_at"/>
+        </createIndex>
+
+        <!-- Индекс для истории -->
+        <createIndex tableName="document_history" indexName="idx_history_document_id">
+            <column name="document_id"/>
+        </createIndex>
+
+        <createIndex tableName="document_history" indexName="idx_history_timestamp">
+            <column name="timestamp"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
