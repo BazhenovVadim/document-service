@@ -17,7 +17,7 @@
             </column>
             <column name="document_id" type="UUID">
                 <constraints nullable="false" foreignKeyName="fk_history_document"
-                             references="documents(id)"/>
+                             references="document(id)" deleteCascade="true"/>
             </column>
             <column name="action" type="VARCHAR(20)">
                 <constraints nullable="false"/>
@@ -32,5 +32,7 @@
             <column name="from_status" type="VARCHAR(20)"/>
             <column name="to_status" type="VARCHAR(20)"/>
         </createTable>
+
     </changeSet>
+
 </databaseChangeLog>

@@ -1,4 +1,4 @@
-package com.vadim.document.service.model.dto;
+package com.vadim.document.service.model.dto.document;
 
 import com.vadim.document.service.model.enums.DocumentStatus;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.vadim.document.service.service;
+package com.vadim.document.service.service.workers;
 
 import com.vadim.document.service.config.worker.WorkerProperties;
 import com.vadim.document.service.interfaces.AbstractDocumentWorker;
@@ -6,6 +6,7 @@ import com.vadim.document.service.model.dto.ProcessDtoResult;
 import com.vadim.document.service.model.entity.DocumentEntity;
 import com.vadim.document.service.model.enums.DocumentStatus;
 import com.vadim.document.service.repository.DocumentRepository;
+import com.vadim.document.service.service.DocumentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +36,6 @@ public class SubmitWorker extends AbstractDocumentWorker {
 
     @Override
     protected List<DocumentEntity> findDocumentsToProcess(int batchSize) {
-        // Находим DRAFT документы, сортируем по дате создания (старые первыми)
         return documentRepository.findTopByStatusOrderByCreatedAtAsc(
                 DocumentStatus.DRAFT, batchSize
         );

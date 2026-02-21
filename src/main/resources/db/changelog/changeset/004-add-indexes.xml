@@ -7,19 +7,19 @@
 
     <changeSet id="004" author="vadim">
         <!-- Индексы для документов -->
-        <createIndex tableName="documents" indexName="idx_documents_status">
+        <createIndex tableName="document" indexName="idx_documents_status">
             <column name="document_status"/>
         </createIndex>
 
-        <createIndex tableName="documents" indexName="idx_documents_author">
+        <createIndex tableName="document" indexName="idx_documents_author">
             <column name="author"/>
         </createIndex>
 
-        <createIndex tableName="documents" indexName="idx_documents_created_at">
+        <createIndex tableName="document" indexName="idx_documents_created_at">
             <column name="created_at"/>
         </createIndex>
 
-        <createIndex tableName="documents" indexName="idx_documents_updated_at">
+        <createIndex tableName="document" indexName="idx_documents_updated_at">
             <column name="updated_at"/>
         </createIndex>
 

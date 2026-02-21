@@ -1,1 +1,21 @@
-spring.application.name=document-service
+spring:
+  application:
+    name: document-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/document_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  liquibase:
+    change-log: "classpath:db/changelog/master.xml"
+
+worker:
+  batch-size: 50
+  submit-interval-ms: 30000
+  approve-interval-ms: 45000
+  enabled: false
+

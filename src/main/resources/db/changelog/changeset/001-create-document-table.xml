@@ -36,12 +36,5 @@
             <column name="version" type="BIGINT" defaultValueNumeric="0"/>
         </createTable>
 
-        <addForeignKeyConstraint
-                baseTableName="document_history"
-                baseColumnNames="document_id"
-                referencedTableName="document"
-                referencedColumnNames="id"
-                constraintName="fk_history_document"
-                onDelete="CASCADE"/>
     </changeSet>
 </databaseChangeLog>
